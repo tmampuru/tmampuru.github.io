@@ -1,0 +1,231 @@
+/* Assign grid instructions to our parent grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 100vh;
+}
+
+/* Give every child element its grid name */
+.header {
+  display: flex;
+  grid-area: header;
+  box-shadow: 0 2px 4px 0 rgb(0, 0, 0, 0.25);
+  z-index: 1000;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+
+.sidenav {
+  display: flex;
+  /* Will be hidden on mobile */
+  flex-direction: column;
+  grid-area: sidenav;
+  background-color: #e3e4e6;
+}
+
+.sidenav-list {
+  padding: 0;
+  margin-top: 85px;
+  list-style-type: none;
+}
+
+.sidenav-list-item {
+  padding: 20px 20px 20px 40px;
+  color: slategray;
+}
+
+.sidenav-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Main section responsive grid intro cards */
+.main {
+  grid-area: main;
+  background-color: #f1f5f7;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+  height: 150px;
+  /* Force our height since we don't have actual content yet */
+  background-color: #e3e4e6;
+  color: slategray;
+}
+
+.main-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  /* Where the magic happens */
+  grid-auto-rows: 94px;
+  grid-gap: 20px;
+  margin: 20px;
+}
+
+.overviewcard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 9px 0px rgb(0,0,0,0.1);
+}
+
+.main-cards {
+  column-count: 2;
+  column-gap: 20px;
+  margin: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20px;
+  -webkit-column-break-inside: avoid;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0px 0px 9px 0px rgb(0,0,0,0.1);
+}
+
+.card-extra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20px;
+  -webkit-column-break-inside: avoid;
+  padding: 24px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0px 0px 9px 0px rgb(0 0 0 / 10%);
+}
+.card-light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 20px;
+  -webkit-column-break-inside: avoid;
+  padding: 24px;
+}
+/* Force varying heights to simulate dynamic content */
+.card:first-child {
+  height: 380px;
+}
+
+.card:nth-child(2) {
+  height: 380px;
+}
+
+.card:nth-child(3) {
+  height: 265px;
+}
+
+
+/* roster */
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.responsive-table .table-header {
+  background-color: #3CBC8D;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.header-item {
+  margin-right: 18px;
+  font-family: PoppinsRegular;
+}
+
+.responsive-table .table-row {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgb(0 0 0 / 10%);
+}
+
+.responsive-table li {
+  border-radius: 3px;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.call-status {
+  background-color: #00bcd4;
+  padding: 0px 14px;
+  border-radius: 3px;
+  color: #ffffff;
+  z-index: 10000;
+}
+
+.ticket-status {
+  background-color: #ff8400;
+  padding: 0px 14px;
+  border-radius: 3px;
+  color: #ffffff;
+  z-index: 10000;
+}
+
+.done-status {
+  background-color: #4caf50;
+  padding: 0px 14px;
+  border-radius: 3px;
+  color: #ffffff;
+  z-index: 10000;
+}
+
+.pending-status {
+  background-color: #95a5a6;
+  padding: 0px 14px;
+  border-radius: 3px;
+  color: #ffffff;
+  z-index: 10000;
+}
+
+
+rect {
+  fill: transparent;
+}

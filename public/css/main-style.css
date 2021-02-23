@@ -1,0 +1,216 @@
+/* reset user agent sheet */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* Body */
+body {
+    font-family: Helvetica;
+    background-color: #f1f5f7;
+    color: slategray;
+}
+
+p, a, span, li, label, input {
+    font-family: PoppinsExtraLight;
+}
+
+h1, h2, h3, h4 {
+    font-family: PoppinsBold;
+}
+
+a {
+    color: #1e5753;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* login inputs */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.form-input:focus {
+    background-color: #3CBC8D;
+    border-radius: 4px;
+    outline: none;
+    color: white;
+}
+
+
+select {
+    color: #1e5753;
+    border: none;
+    border-bottom: 2px solid #3cbc8d;
+    background-color: #f3f8fa;
+    padding: 0px 100px;
+    font-size: 18px;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+select:focus {
+    background-color: #3CBC8D;
+    outline: none;
+    color: white;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    border: none;
+    border-bottom: 2px solid #3cbc8d;
+    background-color: #f3f8fa;
+    font-size: 18px;
+}
+
+button {
+    transition-duration: 0.4s;
+    background-color: #3cbc8d;
+    color: #ffffff;
+    padding: 15px 32px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.16), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-button {
+    text-align: center;
+    padding: 36px 32px;
+}
+
+button:hover {
+    background-color: #1e5753;
+}
+
+button:focus {
+    outline: none;
+    border: none;
+}
+
+.login {
+    height: calc(90vh - 6rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login p {
+    font-size: 40px;
+    color: #1e5753;
+}
+
+.register p {
+    font-size: 40px;
+    color: #1e5753;
+}
+
+
+.register {
+    height: calc(90vh - 6rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-word {
+    position: absolute;
+    left: -40px;
+    font-weight: 700;
+    font-size: 170px;
+    line-height: 1em;
+    color: rgba(0, 0, 0, 0.03);
+}
+
+.background-word {
+    animation: bounce 0.8s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.register li {
+    text-decoration: none;
+    background-color: red;
+    color: #f3f8fa;
+    font-family: 'PoppinsLight';
+    font-size: 14px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 4px 20px;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.alert {
+    background-color: red;
+    color: #f3f8fa;
+    font-family: 'PoppinsLight';
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px 20px;
+    box-shadow: 0 4px 10px 0 rgb(0, 0, 0, 0.20), 0 4px 20px 0 rgb(0, 0, 0, 0.19);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(149,165,166,0.6), rgba(0, 0, 0, 0));
+}
+
+.comms-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    border: none;
+    border-bottom: 2px solid #3cbc8d;
+    background-color: #ffffff;
+    font-size: 18px;
+}
+
+/* footer */
+.footer-start {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #3CBC8D;
+    padding: 1.4rem;
+    color: white;
+    text-align: center;
+}
+
+@font-face {
+    font-family: PoppinsExtraLight;
+    src: url(../fonts/Poppins-ExtraLight.ttf);
+}
+@font-face {
+    font-family: PoppinsBold;
+    src: url(../fonts/Poppins-ExtraBold.ttf);
+}
+@font-face {
+    font-family: PoppinsRegular;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}

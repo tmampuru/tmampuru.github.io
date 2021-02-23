@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/main-style.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/dash-style.css') }}"/>
+{% endblock %}
+
+{% block body %}
+	<div class="grid-container">
+		{{ include('inc/navbar.html.twig') }}
+		<main class="main">
+			<div class="main-cards">
+				<div class="card-extra">
+                <h2>QA, Podleader, Support - Communication</h2>
+                <p>When communicating with support on any matter (discrepancies, counseling, performance feedback) please complete this form</p>
+                </div>
+				<div class="card-extra">
+                    {{ form(form) }}
+                </div>
+			</div>
+		</main>
+		{{ include('inc/footer.html.twig') }}
+	</div>
+	{% block javascripts %}{% endblock %}
+
+
+{% endblock %}

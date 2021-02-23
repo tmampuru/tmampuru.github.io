@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{#{{ encore_entry_link_tags('app') }}#}
+	<link rel="stylesheet" href="{{ asset('css/main-style.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/dash-style.css') }}"/>
+{% endblock %}
+
+{% block body %}
+	<div class="grid-container">
+		{{ include('inc/navbar.html.twig') }}
+		<main class="main">
+			<div class="member-container">
+				<div class="main-cards">
+					<div class="card-light">
+						<ul class="responsive-table">
+							<li class="table-header">
+								<div class="header-item">Members</div>
+								<div class="header-item">Call Day Metric</div>
+								<div class="header-item">Ticket Day Metric</div>
+								<div class="header-item">Chat Day Metric</div>
+							</li>
+							<li class="table-row">
+								<div class="">232</div>
+								<div class="">8</div>
+								<div class="">8</div>
+								<div class="">8</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="container">
+					<hr>
+					<a id="next">next</a>
+					<a id="prev">prev</a>
+					<div class="card-light">
+						<h2>Roster</h2>
+						<ul class="responsive-table">
+							<li class="table-header">
+								<div class="header-item">Extention</div>
+								<div class="header-item">Agent Name</div>
+								<div class="header-item">Category</div>
+								<div class="header-item">Vetting Status</div>
+							</li>
+							<li class="table-row">
+								<div class="">1691</div>
+								<div class="">Tumelo Mam</div>
+								<div class="">Hosting</div>
+								<div class="call-status ">Call</div>
+							</li>
+							<li class="table-row">
+								<div class="">1688</div>
+								<div class="">Sandisile N</div>
+								<div class="">Connectivity</div>
+								<div class="ticket-status ">Ticket</div>
+							</li>
+							<li class="table-row">
+								<div class="">1350</div>
+								<div class="">Annalisa B</div>
+								<div class="">Accounts</div>
+								<div class="done-status ">Done</div>
+							</li>
+							<li class="table-row">
+								<div class="">1315</div>
+								<div class="">Reabetswe M</div>
+								<div class="">Whatsapp</div>
+								<div class="pending-status ">Pending</div>
+							</li>
+						</ul>
+					</div>
+					<div class="card-light">
+						<h2>Roster</h2>
+						<ul class="responsive-table">
+							<li class="table-header">
+								<div class="header-item">Extention</div>
+								<div class="header-item">Agent Name</div>
+								<div class="header-item">Category</div>
+								<div class="header-item">Vetting Status</div>
+							</li>
+							<li class="table-row">
+								<div class="">1691</div>
+								<div class="">Tumelo Mampuru</div>
+								<div class="">Hosting</div>
+								<div class="call-status ">Call</div>
+							</li>
+							<li class="table-row">
+								<div class="">1688</div>
+								<div class="">Sandisile N</div>
+								<div class="">Connectivity</div>
+								<div class="ticket-status ">Ticket</div>
+							</li>
+							<li class="table-row">
+								<div class="">1350</div>
+								<div class="">Annalisa B</div>
+								<div class="">Accounts</div>
+								<div class="done-status ">Done</div>
+							</li>
+							<li class="table-row">
+								<div class="">1315</div>
+								<div class="">Reabetswe M</div>
+								<div class="">Whatsapp</div>
+								<div class="pending-status ">Pending</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+		{{ include('inc/footer.html.twig') }}
+	</div>
+{% endblock %}
