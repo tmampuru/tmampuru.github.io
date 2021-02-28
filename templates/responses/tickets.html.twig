@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/main-style.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/dash-style.css') }}"/>
+{% endblock %}
+
+{% block body %}
+	<div class="grid-container">
+		{{ include('inc/navbar.html.twig') }}
+		<main class="main">
+			<div class="main-cards">
+				<div class="card-extra">Card</div>
+				<div class="card-extra">Card</div>
+			</div>
+		</main>
+		{{ include('inc/footer.html.twig') }}
+	</div>
+	{% block javascripts %}{% endblock %}
+
+
+{% endblock %}

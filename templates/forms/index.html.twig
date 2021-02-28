@@ -1,0 +1,157 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{#{{ encore_entry_link_tags('app') }}#}
+	<link rel="stylesheet" href="{{ asset('css/main-style.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/dash-style.css') }}"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script scr="{{ asset('js/dash-jquery.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+	<div class="grid-container">
+		{{ include('inc/navbar.html.twig') }}
+		<main class="main">
+			<div class="member-container">
+				<div class="container">
+					<div class="main-header"></div>
+					<div class="card-form">
+						{{ form_start(form, {'attr': {'id': 'msform'}}) }}
+							<div>
+								<ul id="progressbar">
+									<li class="active" id="start">
+										<strong>Vetting</strong>
+									</li>
+									<li id="opening">
+										<strong>Opening</strong>
+									</li>
+									<li id="troubleshoot">
+										<strong>Troubleshoot</strong>
+									</li>
+									<li id="wrapping">
+										<strong>Closing</strong>
+									</li>
+									<li id="details">
+										<strong>Call Details</strong>
+									</li>
+									<li id="summary">
+										<strong>Submission</strong>
+									</li>
+								</ul>
+							</div>
+							<fieldset>
+								<div class="form-card">
+									<div class="row">
+										<div class="col-7">
+											<h2 class="fs-title">Account Information:</h2>
+										</div>
+										<div class="col-5">
+											<h2 class="steps">Step 1 - 6</h2>
+										</div>
+									</div>
+									{{ form_widget(form.agentName) }}
+									{{ form_widget(form.agentEmail) }}
+								</div>
+								<input type="button" name="next" class="next action-button" value="Next"/>
+							</fieldset>
+							<fieldset>
+								<div class="form-card">
+									<div class="row">
+										<div class="col-7">
+											<h2 class="fs-title">Account Information:</h2>
+										</div>
+										<div class="col-5">
+											<h2 class="steps">Step 2 - 6</h2>
+										</div>
+									</div>
+									{{ form_widget(form.appropriateIntro, {'label': 'Appropriate Intro',
+									'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.apologyEmpathy, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.identifiedMojo, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.deadAir, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.commentsAdvice1, {'attr': {'class': 'form-input'}}) }}									  
+								</div>
+								<input type="button" name="previous" class="previous action-button-previous" value="Previous">
+								<input type="button" name="next" class="next action-button" value="Next"/>
+							</fieldset>
+							<fieldset>
+								<div class="form-card">
+									<div class="row">
+										<div class="col-7">
+											<h2 class="fs-title">Account Information:</h2>
+										</div>
+										<div class="col-5">
+											<h2 class="steps">Step 3 - 6</h2>
+										</div>
+									</div>
+									{{ form_widget(form.probing, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.proactivelyTroubleshoot, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.stepsAppropriate, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.situationImproved, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.commentsAdvice2, {'attr': {'class': 'form-input'}}) }}										  
+								</div>
+								<input type="button" name="previous" class="previous action-button-previous" value="Previous">
+								<input type="button" name="next" class="next action-button" value="Next"/>
+							</fieldset>
+							<fieldset>
+								<div class="form-card">
+									<div class="row">
+										<div class="col-7">
+											<h2 class="fs-title">Account Information:</h2>
+										</div>
+										<div class="col-5">
+											<h2 class="steps">Step 4 - 6</h2>
+										</div>
+									</div>
+									{{ form_widget(form.agentNotes, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.endCallPolitely, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.remainedProfessional, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.commentsAdvice3, {'attr': {'class': 'form-input'}}) }}										  
+								</div>
+								<input type="button" name="previous" class="previous action-button-previous" value="Previous">
+								<input type="button" name="next" class="next action-button" value="Next"/>
+							</fieldset>
+							<fieldset>
+								<div class="form-card">
+									<div class="row">
+										<div class="col-7">
+											<h2 class="fs-title">Account Information:</h2>
+										</div>
+										<div class="col-5">
+											<h2 class="steps">Step 5 - 6</h2>
+										</div>
+									</div>
+									{{ form_widget(form.mojoLink, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.callDate, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.assessor, {'label': 'Assessor',
+									'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.incomingOutgoingNumber, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.serviceArea, {'attr': {'class': 'form-input'}}) }}
+									{{ form_widget(form.queryBased, {'attr': {'class': 'form-input'}}) }}										  
+								</div>
+								<input type="button" name="previous" class="previous action-button-previous" value="Previous">
+								<input type="button" name="next" class="next action-button" value="Next"/>
+							</fieldset>
+							<fieldset>
+								<div class="form-card">
+									<div class="row">
+										<div class="col-7">
+											<h2 class="fs-title">Final Summary</h2>
+										</div>
+										<div class="col-5">
+											<h2 class="steps">Step 6 - 6</h2>
+										</div>
+									</div>
+									{{ form_row(form.submit, { 'label': 'Submit me' }) }}										  
+								</div>
+								<input type="button" name="previous" class="previous action-button-previous" value="Previous">
+							</fieldset>
+							
+						{{ form_end(form) }}
+					</div>
+				</div>
+			</div>
+		</main>
+		{{ include('inc/footer.html.twig') }}
+	</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/main-style.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/dash-style.css') }}"/>
+{% endblock %}
+
+{% block body %}
+	<div class="grid-container">
+		{{ include('inc/navbar.html.twig') }}
+		<main class="main">
+			<div style="width: 80vw; overflow-x: scroll; background: #fff; padding: 20px;">
+			{% if qacalls %}
+				<table>
+					<tr>
+						<th class="header-item">ID</th>
+						<th class="header-item">Submission Time</th>
+						<th class="header-item">Used an appropriate Intro</th>
+						<th class="header-item">Apology / Empathy</th>
+						<th class="header-item">Identified the client and Product in Question</th>
+						<th class="header-item">Controlled Dead Air</th>
+						<th class="header-item">Comments / Advice 1</th>
+						<th class="header-item">Line of Questioning - Probing</th>
+						<th class="header-item">Did you proactively troubleshoot</th>
+						<th class="header-item">Appropriate and Logical steps/procedures</th>
+						<th class="header-item">Client's situation improved or fixed</th>
+						<th class="header-item">Comments / Advice 2</th>
+						<th class="header-item">Notes made about the interaction/Issue?</th>
+						<th class="header-item">Ended call politely</th>
+						<th class="header-item">Remained professional, respectful and polite</th>
+						<th class="header-item">Comments / Advice 3</th>
+						<th class="header-item">Clients Mojo/Product link</th>
+						<th class="header-item">Call Dated</th>
+						<th class="header-item">Incoming / Outgoing No</th>
+						<th class="header-item">Service Area</th>
+						<th class="header-item">Query was based on:</th>
+						<th class="header-item">Name of Agent </th>
+						<th class="header-item">Email address of Agent</th>
+						<th class="header-item">Assessor</th>
+					</tr>
+					{% for qacalls in qacalls %}
+					<tr>
+						<td class="response-item">{{ qacalls.id }}</td>
+						<td class="response-item">{{ qacalls.submissionTime}}</td>
+						<td class="response-item">{{ qacalls.appropriateIntro }}</td>
+						<td class="response-item">{{ qacalls.apologyEmpathy }}</td>
+						<td class="response-item">{{ qacalls.identifiedMojo }}</td>
+						<td class="response-item">{{ qacalls.deadAir }}</td>
+						<td class="response-item" style"max-width: 10px;">{{ qacalls.commentsAdvice1 }}</td>
+						<td class="response-item">{{ qacalls.probing }}</td>
+						<td class="response-item">{{ qacalls.proactivelyTroubleshoot }}</td>
+						<td class="response-item">{{ qacalls.stepsAppropriate }}</td>
+						<td class="response-item">{{ qacalls.situationImproved }}</td>
+						<td class="response-item">{{ qacalls.commentsAdvice2 }}</td>
+						<td class="response-item">{{ qacalls.agentNotes }}</td>
+						<td class="response-item">{{ qacalls.endCallPolitely }}</td>
+						<td class="response-item">{{ qacalls.remainedProfessional }}</td>
+						<td class="response-item">{{ qacalls.commentsAdvice3 }}</td>
+						<td class="response-item"><a href="{{ qacalls.mojoLink }}">Mojo</a></td>
+						<td class="response-item">{{ qacalls.callDate }}</td>
+						<td class="response-item">{{ qacalls.incomingOutgoingNumber }}</td>
+						<td class="response-item">{{ qacalls.serviceArea }}</td>
+						<td class="response-item">{{ qacalls.queryBased }}</td>
+						<td class="response-item">{{ qacalls.agentName }}</td>
+						<td class="response-item">{{ qacalls.agentEmail }}</td>
+						<td class="response-item">{{ qacalls.assessor }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+				{% else %}
+							<p>No response to display</p>
+				{% endif %}
+			</div>
+		</main>
+		{{ include('inc/footer.html.twig') }}
+	</div>
+	{% block javascripts %}{% endblock %}
+{% endblock %}
